@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: #0B122B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    height: 50px;
+    width: 150px;
+    border: 3px solid white;
+    background: black;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    padding: 5px;
+}
+
+.btn::before{
+    content: '';
+    height: 100%;
+    width: 30%;
+    background: white;
+    border-radius: 30px;
+}
+
+.btn:focus::before{
+    animation: anim1 1.5s linear forwards;
+}
+
+@keyframes anim1{
+    0%{
+        width: 30%;   
+    }
+    49%{
+        margin-left: 0px;
+    }
+    50%{
+        width: 100%;
+        margin-left: auto;
+    }
+    100%{
+        width: 30%;
+        margin-left: auto;
+    }
+}
+
+.btn:focus{
+    animation: anim2 1.5s linear forwards;
+}
+
+@keyframes anim2 {
+    0%{
+        box-shadow: 0px 0px 10px rgba(33,156,243,0),
+        0px 0px 20px rgba(33,156,243,0),
+        0px 0px 30px rgba(33,156,243,0),
+        inset 0px 0px 10px rgba(33,156,243,0);
+    }
+    100%{
+        box-shadow: 0px 0px 10px rgba(33,156,243,0.5),
+        0px 0px 20px rgba(33,156,243,0.5),
+        0px 0px 30px rgba(33,156,243,0.5),
+        inset 0px 0px 10px rgba(33,156,243,1);
+    }
+}
+
